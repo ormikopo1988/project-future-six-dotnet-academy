@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DI.TinyCrm.Web.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210515204830_Initial")]
+    [Migration("20210515210304_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,7 +20,7 @@ namespace DI.TinyCrm.Web.Persistence.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DI.TinyCrm.Web.Persistence.Entities.Customer", b =>
+            modelBuilder.Entity("DI.TinyCrm.Web.Entities.Customer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,7 +52,7 @@ namespace DI.TinyCrm.Web.Persistence.Migrations
                     b.ToTable("Customer");
                 });
 
-            modelBuilder.Entity("DI.TinyCrm.Web.Persistence.Entities.Product", b =>
+            modelBuilder.Entity("DI.TinyCrm.Web.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

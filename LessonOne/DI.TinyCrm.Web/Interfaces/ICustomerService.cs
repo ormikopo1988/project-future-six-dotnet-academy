@@ -1,4 +1,4 @@
-﻿using DI.TinyCrm.Web.Persistence.Entities;
+﻿using DI.TinyCrm.Web.Entities;
 using DI.TinyCrm.Web.Models;
 using DI.TinyCrm.Web.Options;
 using System.Collections.Generic;

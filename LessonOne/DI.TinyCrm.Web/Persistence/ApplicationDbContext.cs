@@ -1,4 +1,4 @@
-﻿using DI.TinyCrm.Web.Persistence.Entities;
+﻿using DI.TinyCrm.Web.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 

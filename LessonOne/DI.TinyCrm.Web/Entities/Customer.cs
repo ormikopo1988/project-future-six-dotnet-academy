@@ -1,4 +1,4 @@
-﻿namespace DI.TinyCrm.Web.Persistence.Entities
+﻿namespace DI.TinyCrm.Web.Entities
 {
     public class Customer
     {

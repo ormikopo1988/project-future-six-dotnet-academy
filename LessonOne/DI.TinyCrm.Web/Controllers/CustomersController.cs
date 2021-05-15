@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using DI.TinyCrm.Web.Persistence.Entities;
+using DI.TinyCrm.Web.Entities;
 using DI.TinyCrm.Web.Interfaces;
 using DI.TinyCrm.Web.Options;
 

@@ -18,7 +18,7 @@ namespace DI.TinyCrm.Web.Persistence.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DI.TinyCrm.Web.Persistence.Entities.Customer", b =>
+            modelBuilder.Entity("DI.TinyCrm.Web.Entities.Customer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,7 +50,7 @@ namespace DI.TinyCrm.Web.Persistence.Migrations
                     b.ToTable("Customer");
                 });
 
-            modelBuilder.Entity("DI.TinyCrm.Web.Persistence.Entities.Product", b =>
+            modelBuilder.Entity("DI.TinyCrm.Web.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
