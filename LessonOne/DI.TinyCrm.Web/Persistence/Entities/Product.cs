@@ -1,4 +1,4 @@
-﻿namespace DI.TinyCrm.Web.Data.Entities
+﻿namespace DI.TinyCrm.Web.Persistence.Entities
 {
     public class Product
     {

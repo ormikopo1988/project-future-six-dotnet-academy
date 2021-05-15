@@ -1,8 +1,8 @@
-﻿using DI.TinyCrm.Web.Data.Entities;
+﻿using DI.TinyCrm.Web.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DI.TinyCrm.Web.Data.Configurations
+namespace DI.TinyCrm.Web.Persistence.Configurations
 {
     public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {

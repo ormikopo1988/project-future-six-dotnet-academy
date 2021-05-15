@@ -1,8 +1,8 @@
-﻿using DI.TinyCrm.Web.Data.Entities;
+﻿using DI.TinyCrm.Web.Persistence.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace DI.TinyCrm.Web.Data
+namespace DI.TinyCrm.Web.Persistence
 {
     public class ApplicationDbContext : DbContext
     {
