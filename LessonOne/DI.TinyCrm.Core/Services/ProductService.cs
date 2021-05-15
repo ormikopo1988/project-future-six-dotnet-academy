@@ -1,22 +1,21 @@
-﻿using DI.TinyCrm.Web.Persistence;
-using DI.TinyCrm.Web.Entities;
-using DI.TinyCrm.Web.Interfaces;
-using DI.TinyCrm.Web.Models;
-using DI.TinyCrm.Web.Options;
+﻿using DI.TinyCrm.Core.Entities;
+using DI.TinyCrm.Core.Interfaces;
+using DI.TinyCrm.Core.Models;
+using DI.TinyCrm.Core.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DI.TinyCrm.Web.Services
+namespace DI.TinyCrm.Core.Services
 {
     public class ProductService : IProductService
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IApplicationDbContext _context;
         private readonly ILogger<ProductService> _logger;
 
-        public ProductService(ApplicationDbContext context, ILogger<ProductService> logger)
+        public ProductService(IApplicationDbContext context, ILogger<ProductService> logger)
         {
             _context = context;
             _logger = logger;

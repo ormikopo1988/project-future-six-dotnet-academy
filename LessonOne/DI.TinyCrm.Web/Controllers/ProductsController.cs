@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using DI.TinyCrm.Web.Entities;
-using DI.TinyCrm.Web.Interfaces;
-using DI.TinyCrm.Web.Options;
+using DI.TinyCrm.Core.Entities;
+using DI.TinyCrm.Core.Interfaces;
+using DI.TinyCrm.Core.Options;
 
 namespace DI.TinyCrm.Web.Controllers
 {

@@ -1,6 +1,6 @@
-using DI.TinyCrm.Web.Persistence;
-using DI.TinyCrm.Web.Interfaces;
-using DI.TinyCrm.Web.Services;
+using DI.TinyCrm.Core.Interfaces;
+using DI.TinyCrm.Core.Services;
+using DI.TinyCrm.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -22,11 +22,13 @@ namespace DI.TinyCrm.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddControllersWithViews();
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IProductService, ProductService>();

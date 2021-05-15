@@ -1,10 +1,12 @@
-﻿using DI.TinyCrm.Web.Entities;
+﻿using DI.TinyCrm.Core.Entities;
+using DI.TinyCrm.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
+using System.Threading.Tasks;
 
-namespace DI.TinyCrm.Web.Persistence
+namespace DI.TinyCrm.Persistence
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
         public DbSet<Customer> Customers { set; get; }
 
@@ -20,6 +22,11 @@ namespace DI.TinyCrm.Web.Persistence
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
             base.OnModelCreating(builder);
+        }
+
+        public async Task<int> SaveChangesAsync()
+        {
+            return await base.SaveChangesAsync();
         }
     }
 }

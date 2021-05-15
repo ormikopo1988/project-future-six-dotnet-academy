@@ -1,10 +1,10 @@
-﻿using DI.TinyCrm.Web.Entities;
-using DI.TinyCrm.Web.Models;
-using DI.TinyCrm.Web.Options;
+﻿using DI.TinyCrm.Core.Entities;
+using DI.TinyCrm.Core.Models;
+using DI.TinyCrm.Core.Options;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DI.TinyCrm.Web.Interfaces
+namespace DI.TinyCrm.Core.Interfaces
 {
     public interface ICustomerService
     {

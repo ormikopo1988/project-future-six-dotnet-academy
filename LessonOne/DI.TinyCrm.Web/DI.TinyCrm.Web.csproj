@@ -17,5 +17,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\DI.TinyCrm.Core\DI.TinyCrm.Core.csproj" />
+    <ProjectReference Include="..\DI.TinyCrm.Persistence\DI.TinyCrm.Persistence.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace DI.TinyCrm.Web.Options
+﻿namespace DI.TinyCrm.Core.Options
 {
     public class CreateCustomerOptions
     {

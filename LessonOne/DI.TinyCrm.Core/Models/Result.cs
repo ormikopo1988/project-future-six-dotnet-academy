@@ -1,4 +1,4 @@
-﻿namespace DI.TinyCrm.Web.Models
+﻿namespace DI.TinyCrm.Core.Models
 {
     public class Result<T>
     {
