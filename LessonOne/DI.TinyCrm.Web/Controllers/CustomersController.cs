@@ -97,5 +97,21 @@ namespace DI.TinyCrm.Web.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            var allCustomersResult = await _customerService.GetCustomersAsync();
+
+            return Ok(allCustomersResult.Data);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _customerService.DeleteCustomerByIdAsync(id);
+
+            return NoContent();
+        }
     }
 }
