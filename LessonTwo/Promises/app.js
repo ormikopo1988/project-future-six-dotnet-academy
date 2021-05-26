@@ -1,12 +1,3 @@
-function runThis(otherFn) {
-    console.log("Running...");
-    otherFn();
-}
-
-runThis(() => {
-    console.log("Function 1...");
-})
-
 setTimeout(function() {
     console.log("Waiting for 1 second...");
     getPerson(function() {
