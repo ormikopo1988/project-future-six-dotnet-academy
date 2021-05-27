@@ -9,11 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DI.ServiceLifetime", "Lesso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DI.Basics", "LessonOne\DI.Basics\DI.Basics.csproj", "{D0439754-2FE2-4BD3-9256-30A6855A4DA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI.TinyCrm.Web", "LessonOne\DI.TinyCrm.Web\DI.TinyCrm.Web.csproj", "{2E5EDD85-96A3-4CB8-A1E3-253C310B3115}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DI.TinyCrm.Web", "LessonOne\DI.TinyCrm.Web\DI.TinyCrm.Web.csproj", "{2E5EDD85-96A3-4CB8-A1E3-253C310B3115}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI.TinyCrm.Persistence", "LessonOne\DI.TinyCrm.Persistence\DI.TinyCrm.Persistence.csproj", "{CD4D9B53-2484-4085-8641-DAB6F4916A6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DI.TinyCrm.Persistence", "LessonOne\DI.TinyCrm.Persistence\DI.TinyCrm.Persistence.csproj", "{CD4D9B53-2484-4085-8641-DAB6F4916A6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI.TinyCrm.Core", "LessonOne\DI.TinyCrm.Core\DI.TinyCrm.Core.csproj", "{09C404B9-119E-45D9-BD07-F0CB7CABA885}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DI.TinyCrm.Core", "LessonOne\DI.TinyCrm.Core\DI.TinyCrm.Core.csproj", "{09C404B9-119E-45D9-BD07-F0CB7CABA885}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LettonTwo", "LettonTwo", "{C6E926D6-AAFD-4B8C-9C8F-A6A34F8166EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration.Web", "LessonTwo\Configuration.Web\Configuration.Web.csproj", "{C780A4AB-F5B7-41C3-8539-5E8118005E22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,10 @@ Global
 		{09C404B9-119E-45D9-BD07-F0CB7CABA885}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09C404B9-119E-45D9-BD07-F0CB7CABA885}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09C404B9-119E-45D9-BD07-F0CB7CABA885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C780A4AB-F5B7-41C3-8539-5E8118005E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C780A4AB-F5B7-41C3-8539-5E8118005E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C780A4AB-F5B7-41C3-8539-5E8118005E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C780A4AB-F5B7-41C3-8539-5E8118005E22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +59,7 @@ Global
 		{2E5EDD85-96A3-4CB8-A1E3-253C310B3115} = {953D6B24-BD1B-4D94-9EBB-A27C5E5F4C6D}
 		{CD4D9B53-2484-4085-8641-DAB6F4916A6C} = {953D6B24-BD1B-4D94-9EBB-A27C5E5F4C6D}
 		{09C404B9-119E-45D9-BD07-F0CB7CABA885} = {953D6B24-BD1B-4D94-9EBB-A27C5E5F4C6D}
+		{C780A4AB-F5B7-41C3-8539-5E8118005E22} = {C6E926D6-AAFD-4B8C-9C8F-A6A34F8166EF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0FD443FD-F78C-4855-824F-632E55A4440E}
