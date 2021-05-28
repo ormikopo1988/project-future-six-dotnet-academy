@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonOne", "LessonOne", "{953D6B24-BD1B-4D94-9EBB-A27C5E5F4C6D}"
+	ProjectSection(SolutionItems) = preProject
+		LessonOne\Dotnet Core - Dependency Injection.pdf = LessonOne\Dotnet Core - Dependency Injection.pdf
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DI.ServiceLifetime", "LessonOne\DI.ServiceLifetime\DI.ServiceLifetime.csproj", "{C61095C4-CDF9-413F-B0F4-D7972F2CE2D8}"
 EndProject
@@ -16,10 +19,16 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DI.TinyCrm.Core", "LessonOne\DI.TinyCrm.Core\DI.TinyCrm.Core.csproj", "{09C404B9-119E-45D9-BD07-F0CB7CABA885}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LettonTwo", "LettonTwo", "{C6E926D6-AAFD-4B8C-9C8F-A6A34F8166EF}"
+	ProjectSection(SolutionItems) = preProject
+		LessonTwo\Asynchronous JavaScript with Promises - Configuration in NET Core.pdf = LessonTwo\Asynchronous JavaScript with Promises - Configuration in NET Core.pdf
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration.Web", "LessonTwo\Configuration.Web\Configuration.Web.csproj", "{C780A4AB-F5B7-41C3-8539-5E8118005E22}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonThree", "LessonThree", "{8D031AC3-6C47-405D-ACD8-8B1AFE050F25}"
+	ProjectSection(SolutionItems) = preProject
+		LessonThree\Dotnet Core - Logging.pdf = LessonThree\Dotnet Core - Logging.pdf
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Web", "LessonThree\Logging.Web\Logging.Web.csproj", "{BE773FA2-71CE-41B0-A86F-C4F0F7B09127}"
 EndProject
