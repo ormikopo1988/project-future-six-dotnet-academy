@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LettonTwo", "LettonTwo", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration.Web", "LessonTwo\Configuration.Web\Configuration.Web.csproj", "{C780A4AB-F5B7-41C3-8539-5E8118005E22}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LessonThree", "LessonThree", "{8D031AC3-6C47-405D-ACD8-8B1AFE050F25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Web", "LessonThree\Logging.Web\Logging.Web.csproj", "{BE773FA2-71CE-41B0-A86F-C4F0F7B09127}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{C780A4AB-F5B7-41C3-8539-5E8118005E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C780A4AB-F5B7-41C3-8539-5E8118005E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C780A4AB-F5B7-41C3-8539-5E8118005E22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE773FA2-71CE-41B0-A86F-C4F0F7B09127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE773FA2-71CE-41B0-A86F-C4F0F7B09127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE773FA2-71CE-41B0-A86F-C4F0F7B09127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE773FA2-71CE-41B0-A86F-C4F0F7B09127}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,7 @@ Global
 		{CD4D9B53-2484-4085-8641-DAB6F4916A6C} = {953D6B24-BD1B-4D94-9EBB-A27C5E5F4C6D}
 		{09C404B9-119E-45D9-BD07-F0CB7CABA885} = {953D6B24-BD1B-4D94-9EBB-A27C5E5F4C6D}
 		{C780A4AB-F5B7-41C3-8539-5E8118005E22} = {C6E926D6-AAFD-4B8C-9C8F-A6A34F8166EF}
+		{BE773FA2-71CE-41B0-A86F-C4F0F7B09127} = {8D031AC3-6C47-405D-ACD8-8B1AFE050F25}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0FD443FD-F78C-4855-824F-632E55A4440E}
