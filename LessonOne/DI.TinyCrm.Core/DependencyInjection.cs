@@ -21,9 +21,6 @@ namespace DI.TinyCrm.Core
 
         public static IServiceCollection AddApplicationInsights(this IServiceCollection services, IConfiguration configuration)
         {
-            // The following line enables Application Insights telemetry collection.
-            services.AddApplicationInsightsTelemetry();
-
             // Register the settings for "ApplicationInsights" section as a service for injection from DI container
             var applicationInsightsSettings = new ApplicationInsightsSettings();
             configuration.Bind(ApplicationInsightsSettings.ApplicationInsightsSectionKey, applicationInsightsSettings);
@@ -44,6 +41,9 @@ namespace DI.TinyCrm.Core
             // You can add custom telemetry processors to TelemetryConfiguration by using the extension method AddApplicationInsightsTelemetryProcessor on IServiceCollection. 
             // You use telemetry processors in advanced filtering scenarios
             services.AddApplicationInsightsTelemetryProcessor<StaticWebAssetsTelemetryProcessor>();
+
+            // The following line enables Application Insights telemetry collection.
+            services.AddApplicationInsightsTelemetry(configuration);
 
             return services;
         }
