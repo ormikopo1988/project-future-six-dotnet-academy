@@ -43,7 +43,7 @@ namespace DI.TinyCrm.Core
             services.AddApplicationInsightsTelemetryProcessor<StaticWebAssetsTelemetryProcessor>();
 
             // The following line enables Application Insights telemetry collection.
-            services.AddApplicationInsightsTelemetry(configuration);
+            services.AddApplicationInsightsTelemetry();
 
             return services;
         }
