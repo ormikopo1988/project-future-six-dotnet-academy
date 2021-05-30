@@ -1,5 +1,7 @@
 using DI.TinyCrm.Core;
+using DI.TinyCrm.Core.ApplicationInsights;
 using DI.TinyCrm.Persistence;
+using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -24,11 +26,14 @@ namespace DI.TinyCrm.Web
 
             services.AddPersistence(Configuration);
             services.AddCore();
+            services.AddApplicationInsights(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, TelemetryConfiguration configuration, ApplicationInsightsSettings applicationInsightsSettings)
         {
+            configuration.DisableTelemetry = applicationInsightsSettings.DisableTelemetry;
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
