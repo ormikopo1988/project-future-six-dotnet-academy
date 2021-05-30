@@ -1,6 +1,8 @@
 # project-future-six-dotnet-academy
 Code.Hub | .NET PF6 Academy
 
+The main project for all lessons is the LessonOne/DI.TinyCrm.Web web application. It is an ASP.NET Core MVC 5 web application.
+
 To run the migrations for the project
 1. Right click on solution in Visual Studio
 2. Click "Open in Terminal"
