@@ -1,4 +1,4 @@
-﻿using DI.TinyCrm.Core.Entities;
+﻿using DI.TinyCrm.Core.Dtos;
 using DI.TinyCrm.Core.Models;
 using DI.TinyCrm.Core.Options;
 using System.Collections.Generic;
@@ -8,11 +8,11 @@ namespace DI.TinyCrm.Core.Interfaces
 {
     public interface ICustomerService
     {
-        Task<Result<List<Customer>>> GetCustomersAsync();
+        Task<Result<List<CustomerDto>>> GetCustomersAsync();
 
-        Task<Result<Customer>> CreateCustomerAsync(CreateCustomerOptions options);
+        Task<Result<CustomerDto>> CreateCustomerAsync(CreateCustomerOptions options);
 
-        Task<Result<Customer>> GetCustomerByIdAsync(int id);
+        Task<Result<CustomerDto>> GetCustomerByIdAsync(int id);
 
         Task<Result<int>> DeleteCustomerByIdAsync(int id);
     }

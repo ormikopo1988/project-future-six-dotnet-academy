@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using DI.TinyCrm.Core.Entities;
 using DI.TinyCrm.Core.Interfaces;
 using DI.TinyCrm.Core.Options;
+using DI.TinyCrm.Core.Dtos;
 
 namespace DI.TinyCrm.Web.Controllers
 {
@@ -52,51 +52,16 @@ namespace DI.TinyCrm.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Code,Name,Description,Price,Quantity")] Product product)
+        public async Task<IActionResult> Create([Bind("Id,Code,Name,Description,Price,Quantity")] ProductDto product)
         {
             if (ModelState.IsValid)
             {
-                await _productService.CreateProductAsync(new CreateProductOptions
-                {
-                    Code = product.Code,
-                    Description = product.Description,
-                    Name = product.Name,
-                    Price = product.Price,
-                    Quantity = product.Quantity
-                });
+                await _productService.CreateProductAsync(CreateProductOptions.MapFromProductDto(product));
 
                 return RedirectToAction(nameof(Index));
             }
 
             return View(product);
-        }
-
-        // GET: Products/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var product = await _productService.GetProductByIdAsync(id.Value);
-
-            if (product.Error != null || product.Data == null)
-            {
-                return NotFound();
-            }
-
-            return View(product.Data);
-        }
-
-        // POST: Products/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            await _productService.DeleteProductByIdAsync(id);
-
-            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]

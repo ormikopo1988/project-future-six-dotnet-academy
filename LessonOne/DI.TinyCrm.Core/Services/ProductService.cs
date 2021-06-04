@@ -1,4 +1,5 @@
-﻿using DI.TinyCrm.Core.Entities;
+﻿using DI.TinyCrm.Core.Dtos;
+using DI.TinyCrm.Core.Entities;
 using DI.TinyCrm.Core.Interfaces;
 using DI.TinyCrm.Core.Models;
 using DI.TinyCrm.Core.Options;
@@ -21,11 +22,11 @@ namespace DI.TinyCrm.Core.Services
             _logger = logger;
         }
 
-        public async Task<Result<Product>> CreateProductAsync(CreateProductOptions options)
+        public async Task<Result<ProductDto>> CreateProductAsync(CreateProductOptions options)
         {
             if (options == null)
             {
-                return new Result<Product>(ErrorCode.BadRequest, "Null options.");
+                return new Result<ProductDto>(ErrorCode.BadRequest, "Null options.");
             }
 
             if (string.IsNullOrWhiteSpace(options.Code) ||
@@ -34,14 +35,14 @@ namespace DI.TinyCrm.Core.Services
               options.Price <= 0 ||
               options.Quantity <= 0)
             {
-                return new Result<Product>(ErrorCode.BadRequest, "Not all required product options provided.");
+                return new Result<ProductDto>(ErrorCode.BadRequest, "Not all required product options provided.");
             }
 
             var productWithSameCode = await _context.Products.SingleOrDefaultAsync(pro => pro.Code == options.Code);
 
             if (productWithSameCode != null)
             {
-                return new Result<Product>(ErrorCode.Conflict, $"Product with code #{options.Code} already exists.");
+                return new Result<ProductDto>(ErrorCode.Conflict, $"Product with code #{options.Code} already exists.");
             }
 
             var newProduct = new Product
@@ -63,20 +64,20 @@ namespace DI.TinyCrm.Core.Services
             {
                 _logger.LogError(ex.Message);
 
-                return new Result<Product>(ErrorCode.InternalServerError, "Could not save product.");
+                return new Result<ProductDto>(ErrorCode.InternalServerError, "Could not save product.");
             }
 
-            return new Result<Product>
+            return new Result<ProductDto>
             {
-                Data = newProduct
+                Data = ProductDto.MapFromProduct(newProduct)
             };
         }
 
-        public async Task<Result<Product>> GetProductByIdAsync(int id)
+        public async Task<Result<ProductDto>> GetProductByIdAsync(int id)
         {
             if (id <= 0)
             {
-                return new Result<Product>(ErrorCode.BadRequest, "Id cannot be less than or equal to zero.");
+                return new Result<ProductDto>(ErrorCode.BadRequest, "Id cannot be less than or equal to zero.");
             }
 
             var product = await _context
@@ -85,25 +86,27 @@ namespace DI.TinyCrm.Core.Services
 
             if (product == null)
             {
-                return new Result<Product>(ErrorCode.NotFound, $"Product with id #{id} not found.");
+                return new Result<ProductDto>(ErrorCode.NotFound, $"Product with id #{id} not found.");
             }
 
-            return new Result<Product>
+            return new Result<ProductDto>
             {
-                Data = product
+                Data = ProductDto.MapFromProduct(product)
             };
         }
 
         public async Task<Result<int>> DeleteProductByIdAsync(int id)
         {
-            var productToDelete = await GetProductByIdAsync(id);
+            var productToDelete = await _context
+                .Products
+                .SingleOrDefaultAsync(pro => pro.Id == id);
 
-            if (productToDelete.Error != null || productToDelete.Data == null)
+            if (productToDelete == null)
             {
                 return new Result<int>(ErrorCode.NotFound, $"Product with id #{id} not found.");
             }
 
-            _context.Products.Remove(productToDelete.Data);
+            _context.Products.Remove(productToDelete);
 
             try
             {
@@ -122,13 +125,13 @@ namespace DI.TinyCrm.Core.Services
             };
         }
 
-        public async Task<Result<List<Product>>> GetProductsAsync()
+        public async Task<Result<List<ProductDto>>> GetProductsAsync()
         {
             var products = await _context.Products.ToListAsync();
 
-            return new Result<List<Product>>
+            return new Result<List<ProductDto>>
             {
-                Data = products.Count > 0 ? products : new List<Product>()
+                Data = products.Count > 0 ? ProductDto.MapFromProduct(products) : new List<ProductDto>()
             };
         }
     }

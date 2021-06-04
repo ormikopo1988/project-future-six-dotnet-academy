@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using DI.TinyCrm.Core.Entities;
 using DI.TinyCrm.Core.Interfaces;
 using DI.TinyCrm.Core.Options;
+using DI.TinyCrm.Core.Dtos;
 
 namespace DI.TinyCrm.Web.Controllers
 {
@@ -52,50 +52,16 @@ namespace DI.TinyCrm.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,VatNumber,Address")] Customer customer)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,VatNumber,Address")] CustomerDto customer)
         {
             if (ModelState.IsValid)
             {
-                await _customerService.CreateCustomerAsync(new CreateCustomerOptions
-                {
-                    Address = customer.Address,
-                    FirstName = customer.FirstName,
-                    LastName = customer.LastName,
-                    VatNumber = customer.VatNumber
-                });
+                await _customerService.CreateCustomerAsync(CreateCustomerOptions.MapFromCustomerDto(customer));
 
                 return RedirectToAction(nameof(Index));
             }
 
             return View(customer);
-        }
-
-        // GET: Customers/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var customer = await _customerService.GetCustomerByIdAsync(id.Value);
-            
-            if (customer.Error != null || customer.Data == null)
-            {
-                return NotFound();
-            }
-
-            return View(customer.Data);
-        }
-
-        // POST: Customers/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            await _customerService.DeleteCustomerByIdAsync(id);
-
-            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
